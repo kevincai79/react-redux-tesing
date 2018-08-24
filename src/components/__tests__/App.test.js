@@ -16,7 +16,6 @@ it('shows a comment box', () => {
   // ReactDOM.render(<App />, div);
   //
   // ReactDOM.unmountComponentAtNode(div);
-
   expect(wrapped.find(CommentBox).length).toEqual(1);
 });
 
