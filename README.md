@@ -1,8 +1,9 @@
-### This project is to practice writing tests for React and Redux
+## This project is to practice writing tests for React and Redux
 
-### Test Outline
+### Test Outline:
+<br /><br />
 ![](images/test_outline.png)
 
 
-### Page for testing
+### Page for testing:
 ![](images/test_page.png)
