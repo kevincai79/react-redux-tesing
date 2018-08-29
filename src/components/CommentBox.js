@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import requireAuth from 'components/requireAuth';
 
 import * as actions from 'actions';
 
@@ -13,8 +14,17 @@ class CommentBox extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    this.props.saveComment(this.state.comment);
+    this.props.saveComment(this.state.comment, () => {
+      this.props.history.push('/');
+    });
+
     this.setState({ comment: '' });
+  };
+
+  handleFetchComments = () => {
+    this.props.fetchComments(() => {
+      this.props.history.push('/');
+    });
   };
 
   render() {
@@ -30,7 +40,7 @@ class CommentBox extends Component {
             <button>Submit Comment</button>
           </div>
         </form>
-        <button className="fetch-comments" onClick={this.props.fetchComments}>
+        <button className="fetch-comments" onClick={this.handleFetchComments}>
           Fetch Comment
         </button>
       </div>
@@ -38,4 +48,4 @@ class CommentBox extends Component {
   }
 }
 
-export default connect(mapStateToProps, actions)(CommentBox);
+export default connect(null, actions)(requireAuth(CommentBox));
