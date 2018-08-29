@@ -15,7 +15,7 @@ class App extends Component {
           this.props.changeAuth(isLoggedIn);
         }}
       >
-        {this.props.auth ? 'Sign out' : 'Sign in'}
+        {this.props.auth ? 'Sign out' : 'Log in'}
       </button>
     );
   }
