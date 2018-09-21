@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import requireAuth from 'components/requireAuth';
+import sizeMe from 'react-sizeme';
 
 import * as actions from 'actions';
 
@@ -48,4 +49,4 @@ class CommentBox extends Component {
   }
 }
 
-export default connect(null, actions)(requireAuth(CommentBox));
+export default sizeMe()(connect(null, actions)(requireAuth(CommentBox)));
